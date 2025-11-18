@@ -1,13 +1,12 @@
 "use client"
 
-import { FC } from "react";
-import { Content, isFilled } from "@prismicio/client";
+import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/components/Bounded";
 import Scene from "./Scene";
-import { View, Text } from "@react-three/drei";
-import { SodaCanProps } from "@/components/SodaCan";
+import { View } from "@react-three/drei";
+import { FC } from "react";
 
 /**
  * Props for `SkyDive`.
@@ -27,7 +26,10 @@ const SkyDive: FC<SkyDiveProps> = ({ slice }) => {
     >
       <h2 className="sr-only">{slice.primary.sentence}</h2>
       <View className="h-screen w-screen">
-        <Scene sentence={slice.primary.sentence} flavor={slice.primary.flavor}/>
+        <Scene
+          flavor={slice.primary.flavor}
+          sentence={slice.primary.sentence}
+        />
       </View>
     </Bounded>
   );

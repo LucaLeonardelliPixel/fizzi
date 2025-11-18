@@ -18,15 +18,9 @@ export const Bounded = <E extends React.ElementType = "section">({
   children,
   ...restProps
 }: BoundedProps<E>) => {
-  
-  // ✅ LA CORREZIONE È QUI
-  // Assegnando 'any', diciamo a TypeScript:
-  // "Fidati di me, so cosa sto facendo. Questo componente accetterà
-  // le props e i children che gli sto passando."
-  const Comp: any = as || "section";
 
   return (
-    <Comp
+    <section
       className={clsx("px-4 first:pt-10 md:px-6", className)}
       {...restProps}
     >
@@ -35,6 +29,6 @@ export const Bounded = <E extends React.ElementType = "section">({
             perché l'errore era sul genitore <Comp> */}
         {children}
       </div>
-    </Comp>
+    </section>
   );
 };
